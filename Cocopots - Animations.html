@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocopots by Ritika | The Premium Café Experience in Kamla Nagar, Delhi</title>
+    <meta name="description" content="Discover Cocopots by Ritika. An elegant, women-owned café in Kamla Nagar, Delhi. Serving artisan Mac n Cheese Pizza and specialty pancakes near DU North Campus.">
+    
+    <!-- Luxury Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- SEO & Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Cocopots by Ritika",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipM-",
+      "url": "https://cocopots-ritika.com",
+      "telephone": "+919911900273",
+      "priceRange": "₹200-400",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "50, Kamla Nehru Marg, Block B, Kamla Nagar",
+        "addressLocality": "Delhi",
+        "postalCode": "110007",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.6829,
+        "longitude": 77.2006
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --espresso: #1a1412;
+            --mocha: #2d1b14;
+            --gold: #c5a059;
+            --cream: #fcfaf7;
+            --champagne: #f4eee3;
+            --text-muted: #6e5f5a;
+            --transition-slow: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Essential Fix for Custom Cursor on Mobile */
+        * { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: var(--cream); 
+            color: var(--espresso); 
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Luxury Typography */
+        h1, h2, h3 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-weight: 500; 
+            text-transform: none;
+            letter-spacing: -0.01em;
+        }
+
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+        /* Custom Luxury Cursor */
+        #cursor {
+            width: 8px; height: 8px; background: var(--gold);
+            border-radius: 50%; position: fixed; pointer-events: none;
+            z-index: 9999; transition: transform 0.1s ease;
+        }
+        #cursor-follower {
+            width: 35px; height: 35px; border: 0.5px solid var(--gold);
+            border-radius: 50%; position: fixed; pointer-events: none;
+            z-index: 9998; transition: transform 0.15s ease;
+        }
+
+        /* Animation Classes */
+        .reveal { opacity: 0; transform: translateY(50px); transition: var(--transition-slow); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Luxury Header/Hero - Restored Coffee Banner */
+        header { 
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Using a high-quality coffee atelier image from Unsplash */
+            background: linear-gradient(rgba(26, 20, 18, 0.45), rgba(26, 20, 18, 0.45)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80') center/cover no-repeat;
+            background-color: var(--espresso);
+            color: white;
+            position: relative;
+        }
+
+        .hero-content { z-index: 2; padding: 20px; }
+        .hero-content h1 { font-size: clamp(3.5rem, 12vw, 7rem); margin-bottom: 5px; font-style: italic; opacity: 0; transform: translateY(30px); animation: fadeInBlur 1.5s forwards 0.5s; }
+        .hero-subtitle { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 40px; font-weight: 300; opacity: 0; animation: fadeInBlur 2s forwards 0.2s; }
+
+        @keyframes fadeInBlur {
+            from { opacity: 0; filter: blur(10px); transform: translateY(30px); }
+            to { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+
+        /* Buttons */
+        .cta-wrap { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .btn { 
+            padding: 20px 40px; border-radius: 0; text-decoration: none; font-size: 0.75rem; 
+            letter-spacing: 0.25em; font-weight: 600; text-transform: uppercase; transition: var(--transition-fast);
+            position: relative; overflow: hidden;
+        }
+        .btn-primary { background: var(--gold); color: white; border: 1px solid var(--gold); }
+        .btn-primary:hover { background: transparent; color: var(--gold); }
+        .btn-secondary { border: 1px solid white; color: white; }
+        .btn-secondary:hover { background: white; color: var(--espresso); }
+
+        /* Section Styling */
+        section { padding: 120px 0; }
+        .section-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; text-align: center; font-weight: 600; }
+        .section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--mocha); }
+
+        /* Story Block */
+        .story-block { max-width: 750px; margin: 0 auto; text-align: center; }
+        .story-block p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 35px; font-weight: 300; }
+
+        /* Menu Display */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px 80px; }
+        .menu-item { border-bottom: 0.5px solid rgba(45, 36, 30, 0.1); padding-bottom: 30px; transition: var(--transition-fast); }
+        .menu-item:hover { transform: translateX(10px); }
+        .menu-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .menu-header h3 { font-size: 1.6rem; color: var(--mocha); }
+        .menu-dots { flex: 1; border-bottom: 1px dotted rgba(0,0,0,0.1); margin: 0 15px; opacity: 0.5; }
+        .menu-price { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--gold); }
+        .menu-desc { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+
+        /* Testimonial Carousel */
+        .review-section { background: var(--champagne); position: relative; overflow: hidden; }
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            padding: 40px 0;
+        }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .review-card {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+        .review-content-wrap { max-width: 800px; margin: 0 auto; }
+        .review-text { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; line-height: 1.35; margin-bottom: 25px; color: var(--mocha); }
+        .review-author { font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; color: var(--gold); }
+        
+        .carousel-dots { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .dot { width: 6px; height: 6px; background: #dcd4c8; border-radius: 50%; transition: var(--transition-fast); cursor: pointer; }
+        .dot.active { background: var(--gold); transform: scale(1.5); }
+
+        /* Footer / Atelier Info */
+        footer { background: var(--espresso); color: var(--champagne); padding: 100px 0 160px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; }
+        .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 30px; color: var(--gold); }
+        .footer-col p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 15px; font-weight: 300; }
+        .footer-col a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: var(--transition-fast); }
+        .footer-col a:hover { border-bottom-color: var(--gold); }
+
+        /* Sticky Navigation - Glassmorphism */
+        .sticky-nav { 
+            position: fixed; bottom: 0; left: 0; right: 0; 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(15px);
+            display: flex; border-top: 1px solid rgba(0,0,0,0.05); z-index: 1000;
+        }
+        .sticky-nav a { 
+            flex: 1; text-align: center; padding: 25px 20px; text-decoration: none; font-size: 0.75rem; 
+            letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase; color: var(--espresso);
+            display: flex; align-items: center; justify-content: center; transition: var(--transition-fast);
+        }
+        .sticky-nav a.highlight { background: var(--espresso); color: white; }
+        .sticky-nav a:hover:not(.highlight) { background: rgba(0,0,0,0.03); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            * { cursor: auto !important; }
+            #cursor, #cursor-follower { display: none; }
+            section { padding: 80px 0; }
+            .hero-content h1 { font-size: 3.8rem; }
+            .section-title { font-size: 2.5rem; }
+            .review-text { font-size: 1.6rem; }
+            .sticky-nav a { padding: 20px; font-size: 0.65rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Luxury Cursor Elements -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <span class="hero-subtitle">Kamla Nagar • New Delhi</span>
+            <h1>Cocopots</h1>
+            <p class="hero-subtitle" style="margin-bottom: 40px;">Atelier of Taste</p>
+            <div class="cta-wrap">
+                <a href="https://wa.me/919911900273?text=Hi%20Cocopots!%20I'd%20like%20to%20reserve%20a%20table%20today%20with%20the%2010%%20discount%20offer!" class="btn btn-primary">Reserve a Table (10% Off)</a>
+                <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Atelier Story Section -->
+    <section>
+        <div class="container reveal">
+            <span class="section-tag">The Boutique</span>
+            <div class="story-block">
+                <h2 class="section-title">A Sanctuary for Fine Coffee & Gourmet Comfort</h2>
+                <p>In the heart of <strong>Kamla Nagar</strong>, Cocopots by Ritika is curated as an urban sanctuary. Favoured by the <strong>Delhi University North Campus</strong> community, we blend neighborhood warmth with boutique sophistication.</p>
+                <p>From our artisan Mac-N-Cheese creations to our delicate Nutella pancakes, every dish is an obsession with quality, crafted for those who appreciate the finer nuances of taste.</p>
+                <div style="margin-top: 40px;">
+                    <span style="border: 0.5px solid var(--gold); padding: 12px 25px; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;">Women Owned Atelier</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection -->
+    <section id="menu" style="background-color: white;">
+        <div class="container">
+            <span class="section-tag">Selection Privée</span>
+            <h2 class="section-title">Les Classiques</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Mac-N-Cheese Pizza</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹259</span>
+                    </div>
+                    <p class="menu-desc">Gourmet macaroni gratinated with aged cheddar over an artisan thin-crust base.</p>
+                </div>
+
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Baked Cheese Nachos</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹159</span>
+                    </div>
+                    <p class="menu-desc">Corn tortillas layered with house salsa, herb cheese, and yellow cheddar.</p>
+                </div>
+
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Penne Alfredo</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹239</span>
+                    </div>
+                    <p class="menu-desc">Classic penne tossed in a velvet parmesan white sauce with seasonal greens.</p>
+                </div>
+
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Nutella Pancake Cake</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹169</span>
+                    </div>
+                    <p class="menu-desc">Towers of fluffy pancakes, Nutella drizzle, and Madagascan vanilla ice cream.</p>
+                </div>
+
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Bubble Banoffee</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹179</span>
+                    </div>
+                    <p class="menu-desc">Warm bubble waffle, fresh banana slices, and rich caramel toffee sauce.</p>
+                </div>
+
+                <div class="menu-item reveal">
+                    <div class="menu-header">
+                        <h3>Artisan Cold Coffee</h3>
+                        <div class="menu-dots"></div>
+                        <span class="menu-price">₹120</span>
+                    </div>
+                    <p class="menu-desc">Signature double-shot espresso blend, frothed and chilled to perfection.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 80px;" class="reveal">
+                <a href="https://wa.me/919911900273?text=Hi%20Cocopots!%20Can%20I've%20the%20menu%20please?" style="color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 8px;">View Full Digital Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Journal -->
+    <section class="review-section">
+        <div class="container reveal">
+            <span class="section-tag">The Journal</span>
+            <div class="carousel-container" id="testimonialCarousel">
+                <div class="review-card">
+                    <div class="review-content-wrap">
+                        <p class="review-text">"An absolute gem in Kamla Nagar. The Mac-N-Cheese pizza is a masterclass in comfort food. Sophisticated yet welcoming."</p>
+                        <span class="review-author">Neha • DU North Campus</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content-wrap">
+                        <p class="review-text">"The best Nutella pancakes I've had in Delhi. The aesthetic is so calming, perfect for study sessions or a quiet date."</p>
+                        <span class="review-author">Aarav • SRCC</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content-wrap">
+                        <p class="review-text">"Cocopots has become our weekend ritual. The artisan coffee and warm service make it feel like a second home."</p>
+                        <span class="review-author">Simran • Hansraj College</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atelier Footer -->
+    <footer>
+        <div class="container footer-grid reveal">
+            <div class="footer-col">
+                <h4>The Location</h4>
+                <p>50, Kamla Nehru Marg, Block B</p>
+                <p>Kamla Nagar, Delhi 110007</p>
+                <p style="margin-top: 25px;"><a href="https://www.google.com/maps/place/Cocopots+by+Ritika/@28.6829728,77.2006194,21z/data=!4m15!1m8!3m7!1s0x390cfdb7ca33cb55:0xa229288a06642266!2sCocopots+by+Ritika!8m2!3d28.6829351!4d77.2006826!10e9!16s%2Fg%2F11h12s9y3r!3m5!1s0x390cfdb7ca33cb55:0xa229288a06642266!8m2!3d28.6829351!4d77.2006826!16s%2Fg%2F11h12s9y3r" target="_blank">Navigate via Maps →</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Atelier Hours</h4>
+                <p>Monday — Sunday</p>
+                <p>11:00 AM — 10:30 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><a href="tel:+919911900273">+91 99119 00273</a></p>
+                <p><a href="https://www.instagram.com/cocopotsbyritika" target="_blank">Instagram: @cocopotsbyritika</a></p>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(197, 160, 89, 0.1); font-size: 0.7rem; opacity: 0.4; letter-spacing: 0.3em; text-transform: uppercase;">
+            © 2026 Cocopots by Ritika • Boutique Café Experience
+        </div>
+    </footer>
+
+    <!-- Sticky Navigation Bar -->
+    <div class="sticky-nav">
+        <a href="https://wa.me/919911900273?text=Hi%20Cocopots!%20I'd%20like%20to%20reserve%20a%20table%20today%20with%20the%2010%%20discount%20offer!"">Reserve Table (10% Off)</a>
+        <a href="https://www.google.com/maps/place/Cocopots+by+Ritika/@28.6829728,77.2006194,21z/data=!4m15!1m8!3m7!1s0x390cfdb7ca33cb55:0xa229288a06642266!2sCocopots+by+Ritika!8m2!3d28.6829351!4d77.2006826!10e9!16s%2Fg%2F11h12s9y3r!3m5!1s0x390cfdb7ca33cb55:0xa229288a06642266!8m2!3d28.6829351!4d77.2006826!16s%2Fg%2F11h12s9y3r" class="highlight">Get Directions</a>
+    </div>
+
+    <script>
+        // Custom Luxury Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            setTimeout(() => {
+                follower.style.left = (e.clientX - 17) + 'px';
+                follower.style.top = (e.clientY - 17) + 'px';
+            }, 60);
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Testimonial Carousel Sync Logic
+        const carousel = document.getElementById('testimonialCarousel');
+        const dots = document.querySelectorAll('.dot');
+
+        carousel.addEventListener('scroll', () => {
+            const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                carousel.scrollTo({ left: i * carousel.offsetWidth, behavior: 'smooth' });
+            });
+        });
+
+        // Hover Effect on Cursor for Interactive Elements
+        document.querySelectorAll('a, .btn, .dot').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                follower.style.transform = 'scale(1.8)';
+                follower.style.background = 'rgba(197, 160, 89, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                follower.style.transform = 'scale(1)';
+                follower.style.background = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
